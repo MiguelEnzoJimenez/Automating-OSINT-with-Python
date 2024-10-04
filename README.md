@@ -1,7 +1,7 @@
 # Automating-OSINT-with-Python
 Hands-on project with Python! 
 
-The URL (Uniform Resource Locator) consists mainly of four parts:
+The URL (Uniform Resource Locator) consists of four parts:
 <br>-Protocol
 <br>-Sub-domain
 <br>-Domain Name or Second level domain (SLD)

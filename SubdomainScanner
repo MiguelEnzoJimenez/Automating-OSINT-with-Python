@@ -1,26 +1,25 @@
 import requests
 
+with open('subdomain_names.txt','r') as file:
+	name = file.read()
+	sub_dom = name.splitlines()
+	print(f"Number of subdomain names present in the file are: {len(sub_dom)}\n")
+	print("List of subdomain names present in the file\n")
+	print(sub_dom)
+
 def domain_scanner(domain_name,sub_domnames):
 	print('----URL after scanning subdomains----')
-	
 	for subdomain in sub_domnames:
-	
 		url = f"https://{subdomain}.{domain_name}"
 		try:
 			requests.get(url)
-			print(f'[+] {url}')
-			
+			print(f'[+] {url}')	
 		except requests.ConnectionError:
 			pass
 
 if __name__ == '__main__':
-
 	dom_name = input("Enter the Domain Name:")
-
-	with open('subdomain_names1.txt','r') as file:
-	
+	with open('subdomain_names.txt','r') as file:
 		name = file.read()
-		
 		sub_dom = name.splitlines()
-		
 	domain_scanner(dom_name,sub_dom)
